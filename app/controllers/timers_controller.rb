@@ -6,7 +6,7 @@ class TimersController < ApplicationController
   # GET /timers
   def index
     @timers = Timer.all
-    render inertia: 'Timer/Index', props: {
+    render inertia: "Timer/Index", props: {
       timers: @timers.map do |timer|
         serialize_timer(timer)
       end
@@ -15,7 +15,7 @@ class TimersController < ApplicationController
 
   # GET /timers/1
   def show
-    render inertia: 'Timer/Show', props: {
+    render inertia: "Timer/Show", props: {
       timer: serialize_timer(@timer)
     }
   end
@@ -23,14 +23,14 @@ class TimersController < ApplicationController
   # GET /timers/new
   def new
     @timer = Timer.new
-    render inertia: 'Timer/New', props: {
+    render inertia: "Timer/New", props: {
       timer: serialize_timer(@timer)
     }
   end
 
   # GET /timers/1/edit
   def edit
-    render inertia: 'Timer/Edit', props: {
+    render inertia: "Timer/Edit", props: {
       timer: serialize_timer(@timer)
     }
   end
